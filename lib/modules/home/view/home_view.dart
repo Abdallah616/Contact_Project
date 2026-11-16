@@ -82,7 +82,12 @@ class _HomeViewState extends State<HomeView> {
                   contacts.removeLast();
                 });
               },
-              child: Assets.icons.deleteIcon.svg(color: AppColors.white),
+              child: Assets.icons.deleteIcon.svg(
+                colorFilter: const ColorFilter.mode(
+                  AppColors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
           if (contacts.isNotEmpty && contacts.length < 6)
             const SizedBox(height: 10),
@@ -100,7 +105,7 @@ class _HomeViewState extends State<HomeView> {
                       backgroundColor: Colors.transparent,
                       builder: (context) {
                         return Padding(
-                          padding: EdgeInsetsGeometry.only(
+                          padding: EdgeInsets.only(
                             bottom: MediaQuery.of(context).viewInsets.bottom,
                           ),
                           child: AddContactBottomSheet(),

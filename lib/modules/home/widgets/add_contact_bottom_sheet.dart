@@ -1,5 +1,6 @@
 import 'package:contact/core/constants/app_strings.dart';
 import 'package:contact/core/theme/app_colors.dart';
+import 'package:contact/core/theme/app_theme_manager.dart';
 import 'package:contact/models/contact_model.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -90,10 +91,7 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
                       nameController.text.isEmpty
                           ? AppStrings.defaultUserName
                           : nameController.text,
-                      style: const TextStyle(
-                        color: AppColors.gold,
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                     const Divider(
                       color: AppColors.gold,
@@ -105,10 +103,7 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
                       emailController.text.isEmpty
                           ? AppStrings.defaultEmail
                           : emailController.text,
-                      style: const TextStyle(
-                        color: AppColors.gold,
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                     const Divider(
                       color: AppColors.gold,
@@ -120,10 +115,7 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
                       phoneController.text.isEmpty
                           ? AppStrings.defaultPhone
                           : phoneController.text,
-                      style: const TextStyle(
-                        color: AppColors.gold,
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -136,7 +128,8 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
           TextField(
             controller: nameController,
             onChanged: (value) => setState(() {}),
-            style: const TextStyle(color: AppColors.white),
+            style: Theme.of(context).textTheme.bodySmall
+                ?.copyWith(color: AppColors.white),
             decoration: const InputDecoration(
               hintText: AppStrings.enterUserNameHint,
             ),
@@ -146,7 +139,8 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
           TextField(
             controller: emailController,
             onChanged: (value) => setState(() {}),
-            style: const TextStyle(color: AppColors.white),
+            style: Theme.of(context).textTheme.bodySmall
+                ?.copyWith(color: AppColors.white),
             decoration: const InputDecoration(
               hintText: AppStrings.enterUserEmailHint,
             ),
@@ -157,7 +151,8 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
           TextField(
             controller: phoneController,
             onChanged: (value) => setState(() {}),
-            style: const TextStyle(color: AppColors.white),
+            style: Theme.of(context).textTheme.bodySmall
+                ?.copyWith(color: AppColors.white),
             decoration: const InputDecoration(
               hintText: AppStrings.enterUserPhoneHint,
             ),
@@ -180,7 +175,6 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
                 Navigator.pop(context, newContact);
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.gold),
             child: const Text(AppStrings.enterUserButton),
           ),
         ],

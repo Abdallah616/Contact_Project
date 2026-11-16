@@ -52,6 +52,8 @@ class ContactCard extends StatelessWidget {
                     ),
                     child: Text(
                       name,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: AppColors.darkBlue,
                         fontWeight: FontWeight.bold,
@@ -75,6 +77,8 @@ class ContactCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             email,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                                   color: AppColors.darkBlue,
@@ -91,6 +95,8 @@ class ContactCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             number,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                                   color: AppColors.darkBlue,
