@@ -1,4 +1,5 @@
 import 'package:contact/core/constants/app_strings.dart';
+import 'package:contact/core/gen/assets.gen.dart';
 import 'package:contact/core/theme/app_colors.dart';
 import 'package:contact/core/theme/app_theme_manager.dart';
 import 'package:contact/models/contact_model.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'dart:io';
+
+import 'package:lottie/lottie.dart';
 
 class AddContactBottomSheet extends StatefulWidget {
   const AddContactBottomSheet({super.key});
@@ -69,11 +72,11 @@ class _AddContactBottomSheetState extends State<AddContactBottomSheet> {
                           borderRadius: BorderRadius.circular(20),
                           child: Image.file(selectedImage!, fit: BoxFit.cover),
                         )
-                      : const Center(
-                          child: Icon(
-                            Icons.image,
-                            size: 50,
-                            color: AppColors.gold,
+                      : Center(
+                          child: Lottie.asset(
+                            Assets.animations.imagePickerAnimations,
+                            width: 250,
+                            height: 250,
                           ),
                         ),
                 ),

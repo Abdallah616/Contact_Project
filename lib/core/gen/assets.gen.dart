@@ -17,11 +17,15 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// File path: assets/animations/image_picker_animations.json
+  String get imagePickerAnimations =>
+      'assets/animations/image_picker_animations.json';
+
   /// File path: assets/animations/list_animation.json
   String get listAnimation => 'assets/animations/list_animation.json';
 
   /// List of all assets
-  List<String> get values => [listAnimation];
+  List<String> get values => [imagePickerAnimations, listAnimation];
 }
 
 class $AssetsIconsGen {
